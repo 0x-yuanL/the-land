@@ -1,0 +1,16 @@
+{
+  "name": "the-land-app",
+  "private": true,
+  "workspaces": [
+    "app/frontend",
+    "app/backend"
+  ],
+  "scripts": {
+    "start": "npx lerna run start",
+    "build": "npx lerna run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.1.2"
+  }
+}
