@@ -1,7 +1,3 @@
-## Available Scripts
-
-In the project directory, you can run:
-
 ## To run the application
 
 1. To use the expected npm package version:

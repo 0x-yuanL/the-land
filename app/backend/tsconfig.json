@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "types": ["node"],
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*"]
+}
