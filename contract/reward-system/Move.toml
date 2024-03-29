@@ -1,10 +1,10 @@
 [package]
-name = "land"
+name = "reward_system"
 version = "1.0.0"
 authors = []
 
 [addresses]
-land="_"
+reward_system='_'
 
 [dev-addresses]
 
@@ -17,5 +17,6 @@ subdir = "aptos-move/framework/aptos-framework"
 git = "https://github.com/aptos-labs/aptos-core.git"
 rev = "devnet"
 subdir = "aptos-move/framework/aptos-token-objects"
+
 
 [dev-dependencies]

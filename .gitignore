@@ -186,7 +186,7 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -344,3 +344,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+node_modules/
+/contract/landuser/.aptos/
+/contract/landuser/build/
+/contract/land/.aptos/
+/contract/land/build/
+/.idea/
+/contract/reward-system/.aptos/
+/contract/reward-system/build/

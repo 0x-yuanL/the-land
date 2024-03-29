@@ -6,7 +6,6 @@ module landuser::main {
     use std::option;
     use std::signer::address_of;
     use std::string::{String, utf8};
-
     const ELANDUSER_NOT_EXIST: u64 = 1;
 
     const APP_OBJECT_SEED: vector<u8> = b"landuser";
@@ -15,7 +14,7 @@ module landuser::main {
     const LANDUSER_COLLECTION_URI: vector<u8> = b"https://img0.baidu.com/it/u=2112609573,2923665802&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500";
 
     struct LanduserInfo has copy, drop, key, store {
-        avatar: vector<u8>
+        avatar: String
     }
 
     struct Landuser has key {
@@ -77,7 +76,7 @@ module landuser::main {
         );
     }
 
-    entry fun create_landuser(user: &signer, name: String, avatar: vector<u8>) acquires CollectionCapability {
+    entry fun create_landuser(user: &signer, name: String, avatar: String) acquires CollectionCapability {
         let uri = utf8(LANDUSER_COLLECTION_URI);
         let description = utf8(LANDUSER_COLLECTION_DESCRIPTION);
         let landuserInfo = LanduserInfo {
