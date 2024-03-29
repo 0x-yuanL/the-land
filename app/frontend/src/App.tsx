@@ -1,32 +1,28 @@
 import React from "react";
-import {
-  NFTDisplaySection,
-  ContentSection,
-  FooterSection,
-} from "./displaySection";
+import { HeaderSection, ContentSection, SiderSection } from "./displaySection";
 import { Navigation } from "./navigation";
+import { UserProfileSection } from "./userProfile";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import { LandContainer } from "./lands";
 
 import { Layout, Alert } from "antd";
 
 export const App = () => {
   const { connected, account } = useWallet();
 
-  const DisplaySection = () => {
-    if (!connected) {
-      return <Alert message="Connect wallet to see your portfolio." />;
-    }
-
-    return account && <NFTDisplaySection address={account.address} />;
-  };
-
   return (
     <Layout>
-      <Navigation />
-      <ContentSection>
-        <DisplaySection />
-      </ContentSection>
-      <FooterSection />
+      <HeaderSection>
+        <Navigation />
+      </HeaderSection>
+      <Layout>
+        <SiderSection>
+          <UserProfileSection />
+        </SiderSection>
+        <ContentSection>
+          <LandContainer />
+        </ContentSection>
+      </Layout>
     </Layout>
   );
 };
