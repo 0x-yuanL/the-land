@@ -5,8 +5,8 @@ import { WalletButtons } from "../wallet";
 import { MenuSection } from "./MenuSection";
 
 export const Navigation = ({}) => (
-  <Row justify="space-between">
-    <Col span={8}>
+  <Row>
+    <Col span={12}>
       <MenuSection />
     </Col>
     <Col>

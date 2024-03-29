@@ -9,23 +9,24 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.9.1",
+    "@aptos-labs/wallet-adapter-react": "^2.1.8",
+    "antd": "^5.0.0",
+    "petra-plugin-wallet-adapter": "^0.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "@aptos-labs/wallet-adapter-react": "^2.1.8",
-    "@aptos-labs/ts-sdk": "^1.9.1",
-    "antd": "^5.0.0",
-    "petra-plugin-wallet-adapter": "^0.4.4"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@types/node": "20.9.0",
-    "@types/react": "18.2.37",
-    "@types/react-dom": "18.2.15",
-    "@types/jest": "^27.5.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "prettier": "^3.1.0",
     "typescript": "^4.9.5"
   },
