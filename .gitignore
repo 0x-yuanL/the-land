@@ -4,3 +4,5 @@ node_modules/
 /contract/land/.aptos/
 /contract/land/build/
 /.idea/
+/contract/reward-system/.aptos/
+/contract/reward-system/build/

@@ -1,0 +1,22 @@
+[package]
+name = "reward_system"
+version = "1.0.0"
+authors = []
+
+[addresses]
+reward_system='_'
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "devnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "devnet"
+subdir = "aptos-move/framework/aptos-token-objects"
+
+
+[dev-dependencies]
