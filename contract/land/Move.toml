@@ -10,12 +10,12 @@ land="_"
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "testnet"
+rev = "devnet"
 subdir = "aptos-move/framework/aptos-framework"
 
 [dependencies.AptosTokenObjects]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "testnet"
+rev = "devnet"
 subdir = "aptos-move/framework/aptos-token-objects"
 
 [dev-dependencies]

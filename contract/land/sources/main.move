@@ -111,7 +111,7 @@ module land::main {
     entry public fun init_mint(sender: &signer) acquires ResourceCap {
         let caller_address = signer::address_of(sender);
         assert!(caller_address == @land, error::permission_denied(ENOT_AUTHORIZED));
-        mint(sender, 10000000u64, timestamp::now_microseconds())
+        mint(sender, 100000000u64, timestamp::now_microseconds())
     }
 
     fun inter_mint(sender: &signer,
@@ -191,7 +191,7 @@ module land::main {
         )
 
     }
-    entry public fun mint(
+    fun mint(
         sender: &signer,
         price: u64,
         lastHarvestTimeStamp: u64,
@@ -224,31 +224,6 @@ module land::main {
 
         token::burn(burn_ref);
     }
-
-    // entry fun set_landProp(
-    //     sender: &signer,
-    //     object: Object<LandProp>,
-    //     owner: address,
-    //     price: u64,
-    //     lastHarvestTimeStamp: u64,
-    // ) acquires LandProp {
-    //     let oldLandProp = borrow_landProp(signer::address_of(sender), object);
-    //     event::emit(
-    //         SetLandPropEvent {
-    //             owner: object::owner(object),
-    //             token_id: object::object_address(&object),
-    //             old_land_prop: *oldLandProp,
-    //             new_land_prop: LandProp {
-    //                 owner,
-    //                 price,
-    //                 lastHarvestTimeStamp
-    //             }
-    //         }
-    //     );
-    //     borrow_mut_landProp(signer::address_of(sender), object).owner = owner;
-    //     borrow_mut_landProp(signer::address_of(sender), object).price = price;
-    //     borrow_mut_landProp(signer::address_of(sender), object).lastHarvestTimeStamp = lastHarvestTimeStamp;
-    // }
 
     entry fun buy_landProp(
         sender: &signer,
