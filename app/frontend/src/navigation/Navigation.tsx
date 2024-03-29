@@ -1,20 +1,16 @@
 import React from "react";
-import { Layout } from "antd";
+import { Col, Row } from "antd";
+
 import { WalletButtons } from "../wallet";
+import { MenuSection } from "./MenuSection";
 
-const { Header } = Layout;
-
-export const Navigation = () => (
-  <Header
-    style={{
-      position: "sticky",
-      top: 0,
-      zIndex: 1,
-      width: "100%",
-      display: "flex",
-      alignItems: "center",
-    }}
-  >
-    <WalletButtons />
-  </Header>
+export const Navigation = ({}) => (
+  <Row justify="space-between">
+    <Col span={8}>
+      <MenuSection />
+    </Col>
+    <Col>
+      <WalletButtons />
+    </Col>
+  </Row>
 );
