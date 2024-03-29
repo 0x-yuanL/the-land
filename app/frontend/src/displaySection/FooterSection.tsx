@@ -7,7 +7,7 @@ const { Footer } = Layout;
 export const FooterSection = () => {
   return (
     <Footer style={{ textAlign: "center" }}>
-      ©{new Date().getFullYear()} Created by y-L
+      ©{new Date().getFullYear()} Move on Aptos Hackathon - The Land
     </Footer>
   );
 };

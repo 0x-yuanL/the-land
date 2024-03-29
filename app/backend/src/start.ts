@@ -1,6 +1,6 @@
-import { app } from "./app";
+import { server } from "./server";
 
-app.listen(process.env.SERVER_PORT, () => {
+server.listen(process.env.SERVER_PORT, () => {
   console.log(
     `Server started at ${process.env.NODE_HOST}:${process.env.SERVER_PORT}`
   );
