@@ -11,10 +11,9 @@ export type LandProp = {
 export type LandUserProp = {
     avatar: string;
 }
-export type TokenData = [
+export type TokenData = {
     name: string
-]
-
+}
 export type Nft = {
     address: string;
     tokenData: TokenData

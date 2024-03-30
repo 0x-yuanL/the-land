@@ -16,7 +16,7 @@ export const WalletButtons = () => {
     return <Button onClick={disconnect}>Disconnect: {address} </Button>;
   }
 
-  if (isLoading || !wallets[0]) {
+  if (isLoading || typeof wallets == 'undefined' || !wallets[0] ) {
     return (
       <Button type="default" loading>
         Wallet Connecting...
