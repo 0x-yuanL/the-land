@@ -13,7 +13,7 @@ export const APT_UNIT = 100_000_000;
 export const LAND_CONTRACT_ADDRESS = "0x62533bd299c8e81fe29fc489a7208c112772632459688a1f3a4922f32045d4a9";
 export const  LAND_COLLECTION_ID = "0x510ebc79073e86070e48f2c204dfeda80229d71f43174640c2eb2a3ac02d8409";
 
-export const getLand = async (
+export const getLandProp = async (
     landObjectAddr: string
 ): Promise<[string, LandProp]> => {
   const landProp = await aptos.view({
