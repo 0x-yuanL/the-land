@@ -1,8 +1,8 @@
-export enum LoadingStatus {
-  Idle = "idle",
-  Loading = "loading",
-  Success = "success",
-  Error = "error",
+export enum LoadStatus {
+  IDLE = "idle",
+  LOADING = "loading",
+  LOADED = "loaded",
+  ERROR = "error",
 }
 
 export type LandAttributes = {
