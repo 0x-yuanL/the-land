@@ -75,6 +75,9 @@ export const getOwnedLandUserToken = async (walletAddress: string) => {
             where: {owner_address: {_eq: $walletAddress}, current_token_data: {collection_id: {_eq: $collectionId}}}
           ) {
             address: token_data_id
+            tokenData: current_token_data {
+              name: token_name
+            }
           }
         }
       `,
