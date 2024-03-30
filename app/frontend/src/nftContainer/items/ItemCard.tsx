@@ -1,23 +1,34 @@
 import React from "react";
 
-import { DiscordOutlined } from "@ant-design/icons";
+import {
+  DiscordOutlined,
+  RocketOutlined,
+  FireOutlined,
+} from "@ant-design/icons";
 import { Card, Skeleton, Button, Flex } from "antd";
 import { ItemAttributes, NFTResource, StoneClaimStatus } from "../types";
 import { ProgressBar } from "../../progressBar/ProgressBar";
-import { AptosIcon } from "./aptosIcon";
+import { AptosIcon } from "./customizedIcons";
 
 type ItemCardPros = ItemAttributes &
   NFTResource &
   StoneClaimStatus & { isLoading: boolean };
 
 const CardAction = () => {
-  return <Button block>Boost</Button>;
+  return (
+    <Button block>
+      <RocketOutlined />
+      <span>Relay</span>
+    </Button>
+  );
 };
 
 const CardContent = ({ stoneQuality }) => {
   return (
     <p>
-      <b>{stoneQuality} stones</b>
+      <span>
+        <b>{stoneQuality} stones</b>
+      </span>
     </p>
   );
 };
@@ -52,6 +63,11 @@ export const ItemCard = ({
         style={itemCardStyle}
         cover={<img src={imageUrl} alt={name} />}
         type="inner"
+        title={
+          <span>
+            <FireOutlined /> 3.1k
+          </span>
+        }
       >
         <Skeleton loading={isLoading} avatar active>
           <UserSource name={name} source={"aptos"} />

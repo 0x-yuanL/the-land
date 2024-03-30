@@ -1,21 +1,59 @@
 import React, { useState } from "react";
-import { DiscordOutlined } from "@ant-design/icons";
+import { DiscordOutlined, FireOutlined, PlusOutlined } from "@ant-design/icons";
 
-import { Card, Skeleton } from "antd";
+import { Card, Skeleton, Row, Col, Button } from "antd";
 
 type UserProfileCardProps = {
   isLoading: boolean;
   name: string;
   imageUrl: string;
   value: number;
-  unclaimedPoints: number;
+  unclaimedStone: number;
+  stoneQuality: number;
 };
 
-const CardContent = ({ value, points }) => {
+const CardContent = ({ value, stones, unclaimedStone }) => {
   return (
     <>
-      <p>Value: {value} APT</p>
-      <p>Unclaimed: {points} points </p>
+      <Row>
+        <Col span={8}>Hot</Col>
+        <Col span={8} offset={6}>
+          <b>
+            <FireOutlined /> 3.5k
+            <span>
+              <Button>
+                <PlusOutlined />
+                <span>Add Hot</span>
+              </Button>
+            </span>
+          </b>
+        </Col>
+      </Row>
+      <p>
+        <Row>
+          <Col span={8}>Value:</Col>
+          <Col span={8} offset={6}>
+            <b>{value} APT</b>
+          </Col>
+        </Row>
+      </p>
+
+      <p>
+        <Row>
+          <Col span={8}>Stone:</Col>
+          <Col span={8} offset={6}>
+            <b>{stones}</b>
+          </Col>
+        </Row>
+      </p>
+      <p>
+        <Row>
+          <Col span={8}>Unclaimed:</Col>
+          <Col span={8} offset={6}>
+            <b>{unclaimedStone}</b>
+          </Col>
+        </Row>
+      </p>
     </>
   );
 };
@@ -27,7 +65,8 @@ export const UserProfileCard = ({
   name,
   imageUrl,
   value,
-  unclaimedPoints,
+  unclaimedStone,
+  stoneQuality,
 }: UserProfileCardProps) => {
   const [loading, setLoading] = useState(true);
 
@@ -39,9 +78,15 @@ export const UserProfileCard = ({
       type="inner"
     >
       <Skeleton loading={isLoading} avatar active>
-        <h3>{name}</h3>
-        <DiscordOutlined />
-        <CardContent value={value} points={unclaimedPoints} />
+        <h3>
+          <DiscordOutlined /> @{name}
+        </h3>
+
+        <CardContent
+          value={value}
+          stones={stoneQuality}
+          unclaimedStone={unclaimedStone}
+        />
       </Skeleton>
     </Card>
   );

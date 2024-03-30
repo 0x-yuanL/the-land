@@ -1,10 +1,10 @@
 import React from "react";
 
-import { DiscordOutlined } from "@ant-design/icons";
+import { DiscordOutlined, FireOutlined } from "@ant-design/icons";
 import { Card, Skeleton, Button, Flex } from "antd";
 import { LandAttributes, NFTResource, StoneClaimStatus } from "../types";
 import { ProgressBar } from "../../progressBar/ProgressBar";
-import { AptosIcon } from "../items/aptosIcon";
+import { AptosIcon } from "../items/customizedIcons";
 
 type LandCardPros = LandAttributes &
   NFTResource &
@@ -53,6 +53,11 @@ export const LandCard = ({
         style={landCardStyle}
         cover={<img src={imageUrl} alt={name} />}
         type="inner"
+        title={
+          <span>
+            <FireOutlined /> 3.1k
+          </span>
+        }
       >
         <Skeleton loading={isLoading} avatar active>
           <UserSource name={name} source={"discord"} />
