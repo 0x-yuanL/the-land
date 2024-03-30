@@ -8,7 +8,7 @@ import {
 import { Card, Skeleton, Button, Flex } from "antd";
 import { ItemAttributes, NFTResource, StoneClaimStatus } from "../types";
 import { ProgressBar } from "../../progressBar/ProgressBar";
-import { AptosIcon } from "./aptosIcon";
+import { AptosIcon } from "./customizedIcons";
 
 type ItemCardPros = ItemAttributes &
   NFTResource &
@@ -18,7 +18,7 @@ const CardAction = () => {
   return (
     <Button block>
       <RocketOutlined />
-      <span>Boost</span>
+      <span>Relay</span>
     </Button>
   );
 };
