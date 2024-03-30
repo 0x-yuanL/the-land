@@ -7,13 +7,19 @@ import { ItemCard } from "./items";
 import { mockItemDataList } from "./mockData/mockItemDataList";
 import { mockLandDataList } from "./mockData/mockLandDataList";
 
+import { useLands } from "./lands/hooks";
+
 export const NFTSection = () => {
+  const { lands } = useLands();
+
+  console.log("=== lands", lands);
+
   const landCards = mockLandDataList.map((landData) => (
-    <LandCard isLoading={false} {...landData} />
+    <LandCard key={landData.name} isLoading={false} {...landData} />
   ));
 
   const itemCards = mockItemDataList.map((itemData) => (
-    <ItemCard isLoading={false} {...itemData} />
+    <ItemCard key={itemData.name} isLoading={false} {...itemData} />
   ));
 
   const cards = [...landCards, ...itemCards];
