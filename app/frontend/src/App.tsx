@@ -7,6 +7,7 @@ import { NFTSection } from "./nftContainer";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "antd";
+import {LotterySection} from "./lottery";
 
 const MainPage = () => {
   return (
@@ -27,7 +28,9 @@ const LotteryPage = () => {
       <SiderSection>
         <UserProfileSection />
       </SiderSection>
-      <h3>Lottery page</h3>
+        <ContentSection>
+            <LotterySection></LotterySection>
+        </ContentSection>
     </Layout>
   );
 };

@@ -11,10 +11,12 @@ export const aptos = new Aptos(config);
 export const APT = "0x1::aptos_coin::AptosCoin";
 export const APT_UNIT = 100_000_000;
 export const LAND_USER_CONTRACT_ADDRESS = "0x2b25734658903a741486e434f614d26f227e099d1bf13d123f7f32f3d1b62961";
-
 export const  LAND_USER_COLLECTION_ID = "0x1bb43f28b172a3bb74ca7b9b22d8dbd3d956f6aabfb619011b31c1ff3e8c60c5"
 export const LAND_CONTRACT_ADDRESS = "0x62533bd299c8e81fe29fc489a7208c112772632459688a1f3a4922f32045d4a9";
 export const  LAND_COLLECTION_ID = "0x510ebc79073e86070e48f2c204dfeda80229d71f43174640c2eb2a3ac02d8409";
+export const REWARD_SYSTEM_CONTRACT_ADDRESS = "0x58ed9d97df952659859a5185dae113430146c42b558cf405adc0f311000b2b6c";
+export const RAFFLE_TICKET_COLLECTION_ID = "0x56f5813eaefaa1061756168652a8b4bc374ec8e59eede93a49db6600be665a11";
+export const VOUCHER_COLLECTION_ID = "0xcfcde35aa5b5875d3cc97fc7799fc9b0e60e2e8f403c603630ad3a51f0c3d327";
 
 export const getLandProp = async (
     landObjectAddr: string
@@ -112,4 +114,52 @@ export const getOwnedLandUserToken = async (walletAddress: string) => {
      await provider.waitForTransaction(response.hash);
  *
  */
+
+export const getOwnedRaffleTickets = async (walletAddress: string) => {
+  const result: {
+    current_token_ownerships_v2: Nft[];
+  } = await aptos.queryIndexer({
+    query: {
+      query: `
+       query MyQuery($walletAddress: String, $collectionId: String) {
+          current_token_ownerships_v2(
+            where: {owner_address: {_eq: $walletAddress}, current_token_data: {collection_id: {_eq: $collectionId}}, amount: {_gt: "0"}}
+          ) {
+            address: token_data_id
+            tokenData: current_token_data {
+              name: token_name
+            }
+          }
+        }
+      `,
+      variables: { collectionId: RAFFLE_TICKET_COLLECTION_ID, walletAddress: walletAddress },
+    },
+  });
+
+  return result.current_token_ownerships_v2;
+};
+
+export const getOwnedVouchers = async (walletAddress: string) => {
+  const result: {
+    current_token_ownerships_v2: Nft[];
+  } = await aptos.queryIndexer({
+    query: {
+      query: `
+        query MyQuery($walletAddress: String, $collectionId: String) {
+          current_token_ownerships_v2(
+            where: {owner_address: {_eq: $walletAddress}, current_token_data: {collection_id: {_eq: $collectionId}}, amount: {_gt: "0"}}
+          ) {
+            address: token_data_id
+            tokenData: current_token_data {
+              name: token_name
+            }
+          }
+        }
+      `,
+      variables: { collectionId: VOUCHER_COLLECTION_ID, walletAddress: walletAddress },
+    },
+  });
+
+  return result.current_token_ownerships_v2;
+};
 

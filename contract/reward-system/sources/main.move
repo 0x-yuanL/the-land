@@ -391,6 +391,15 @@ module reward_system::main {
         }
     }
 
+    #[view]
+    public fun get_VoucherProp(object: Object<TicketProp>): VoucherProp acquires VoucherProp {
+        let  voucherProp = borrow_global<VoucherProp>(object::object_address(&object));
+        VoucherProp {
+            owner: voucherProp.owner,
+            amout: voucherProp.amout
+        }
+    }
+
     inline fun borrow_tikcetProp(owner: address, object: Object<TicketProp>): &TicketProp {
         assert!(object::is_owner(object, owner), ERROR_NOWNER);
         borrow_global<TicketProp>(object::object_address(&object))
