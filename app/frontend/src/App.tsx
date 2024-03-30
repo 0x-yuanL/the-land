@@ -3,7 +3,7 @@ import { HeaderSection, ContentSection, SiderSection } from "./displaySection";
 import { Navigation, navigationPaths } from "./navigation";
 import { UserProfileSection } from "./userProfile";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
-import { LandContainer } from "./lands";
+import { NFTSection } from "./nftContainer";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "antd";
@@ -15,7 +15,7 @@ const MainPage = () => {
         <UserProfileSection />
       </SiderSection>
       <ContentSection>
-        <LandContainer />
+        <NFTSection />
       </ContentSection>
     </Layout>
   );
