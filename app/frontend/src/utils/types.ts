@@ -7,3 +7,7 @@ export type LandProp = {
     owner: string;
     price: number;
 }
+
+export type LandUserProp = {
+    avatar: string;
+}
