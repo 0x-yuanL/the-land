@@ -5,8 +5,8 @@ type PointsProgressProps = {
   percent: number;
 };
 
-export const PointsProgress = ({ percent }: PointsProgressProps) => (
-  <Flex vertical gap="middle">
+export const ProgressBar = ({ percent }: PointsProgressProps) => (
+  <Flex gap="small">
     <Progress
       percent={percent}
       status="active"

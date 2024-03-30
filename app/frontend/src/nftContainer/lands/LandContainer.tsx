@@ -3,7 +3,7 @@ import React from "react";
 import { Flex } from "antd";
 import { LandCard } from "./LandCard";
 
-import { mockLandDataList } from "./mockLandDataList";
+import { mockLandDataList } from "../mockData/mockLandDataList";
 
 export const LandContainer = () => {
   const lands = mockLandDataList.map((landData) => (
